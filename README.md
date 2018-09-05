@@ -1,3 +1,3 @@
-Material Motion Playground
+Motion Layout Playground
 -----------------------------
-This is a demo project demonstrating how to use material motion
+This is a demo project demonstrating how to use motion layout
