@@ -25,14 +25,17 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.appcompat:appcompat:1.0.0-rc02'
     implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha05'
     implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha05'
     implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0-alpha05'
     implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0-alpha05'
-    implementation 'androidx.core:core-ktx:0.3'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation 'androidx.core:core-ktx:1.0.0-rc02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0-rc02'
+
 }
