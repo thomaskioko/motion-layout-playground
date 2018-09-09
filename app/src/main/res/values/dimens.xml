@@ -2,7 +2,7 @@
 <resources>
     <dimen name="dimen_profile_header_view">360dp</dimen>
     <dimen name="dimen_image_view">100dp</dimen>
-    <dimen name="dimen_header_background">140dp</dimen>
+    <dimen name="dimen_header_background">130dp</dimen>
     <dimen name="dimen_standard">16dp</dimen>
     <dimen name="dimen_small">8dp</dimen>
 </resources>
