@@ -18,6 +18,10 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.RequiresApi
 import com.thomaskioko.materialmotion.R
 
+
+/**
+ * This class is borrowed from {@link https://github.com/hdodenhof/CircleImageView} and re-written in kotlin
+ */
 open class CircleImageView : ImageView {
 
     private val drawableRect = RectF()
