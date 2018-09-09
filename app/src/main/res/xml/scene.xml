@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/expanded"
+        app:duration="200">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:moveWhenScrollAtTop="true"
+            app:touchAnchorId="@id/recycler_view_tweets"
+            app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                app:framePosition="70"
+                app:target="@id/toolbar_image">
+                <CustomAttribute
+                    app:attributeName="imageAlpha"
+                    app:customIntegerValue="0" />
+            </KeyAttribute>
+            <KeyAttribute
+                app:framePosition="0"
+                app:target="@id/toolbar_image">
+                <CustomAttribute
+                    app:attributeName="imageAlpha"
+                    app:customIntegerValue="255" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="0"
+                app:target="@id/btn_edit_profile" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="180"
+                app:target="@id/btn_edit_profile" />
+
+
+        </KeyFrameSet>
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/expanded">
+
+        <Constraint
+            android:id="@id/recycler_view_tweets"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_background" />
+
+        <Constraint
+            android:id="@id/view_background"
+            android:layout_height="@dimen/dimen_profile_header_view"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_header_background"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/btn_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/dimen_standard"
+            android:layout_marginEnd="@dimen/dimen_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
+
+        <Constraint
+            android:id="@id/view_background"
+            android:layout_height="?actionBarSize"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_header_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-130dp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/recycler_view_tweets"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/btn_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/dimen_standard"
+            android:layout_marginEnd="@dimen/dimen_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-190dp" />
+
+        </Constraint>
+
+    </ConstraintSet>
+
+</MotionScene>
