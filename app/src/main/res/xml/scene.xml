@@ -14,30 +14,73 @@
             app:touchAnchorSide="top" />
 
         <KeyFrameSet>
+
+            <KeyPosition
+                app:framePosition="20"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.65"
+                app:target="@+id/toolbar_image" />
+
             <KeyAttribute
-                app:framePosition="70"
-                app:target="@id/toolbar_image">
-                <CustomAttribute
-                    app:attributeName="imageAlpha"
-                    app:customIntegerValue="0" />
-            </KeyAttribute>
-            <KeyAttribute
-                app:framePosition="0"
+                app:framePosition="50"
                 app:target="@id/toolbar_image">
                 <CustomAttribute
                     app:attributeName="imageAlpha"
                     app:customIntegerValue="255" />
             </KeyAttribute>
-
             <KeyAttribute
-                android:alpha="1"
-                app:framePosition="0"
-                app:target="@id/btn_edit_profile" />
+                app:framePosition="90"
+                app:target="@id/toolbar_image">
+                <CustomAttribute
+                    app:attributeName="imageAlpha"
+                    app:customIntegerValue="0" />
+            </KeyAttribute>
 
             <KeyAttribute
                 android:alpha="0"
-                app:framePosition="180"
-                app:target="@id/btn_edit_profile" />
+                app:framePosition="90"
+                app:target="@id/tv_user_name_collapsed" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:target="@id/tv_user_name_collapsed" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="90"
+                app:target="@id/tv_tweets_count" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:target="@id/tv_tweets_count" />
+
+
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="20"
+                app:target="@id/iv_profile_image" />
+
+            <KeyPosition
+                app:framePosition="20"
+                app:keyPositionType="pathRelative"
+                app:percentX="-1"
+                app:target="@id/iv_profile_image" />
+
+
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="25"
+                app:target="@id/iv_profile_image" />
+
+            <KeyPosition
+                app:framePosition="25"
+                app:keyPositionType="pathRelative"
+                app:percentX="0"
+                app:target="@id/iv_profile_image" />
 
 
         </KeyFrameSet>
@@ -54,14 +97,6 @@
             app:layout_constraintTop_toBottomOf="@+id/view_background" />
 
         <Constraint
-            android:id="@id/view_background"
-            android:layout_height="@dimen/dimen_profile_header_view"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Constraint
             android:id="@id/toolbar_image"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_header_background"
@@ -69,6 +104,27 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="2dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/iv_profile_image"
+            android:layout_width="@dimen/dimen_image_view"
+            android:layout_height="@dimen/dimen_image_view"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="95dp"
+            android:elevation="2dp"
+            android:src="@drawable/profile_pic"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
 
             <CustomAttribute
                 app:attributeName="translationY"
@@ -81,39 +137,252 @@
             android:layout_height="30dp"
             android:layout_marginTop="@dimen/dimen_standard"
             android:layout_marginEnd="@dimen/dimen_small"
-            app:layout_constraintEnd_toEndOf="parent"
             android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
 
             <CustomAttribute
                 app:attributeName="translationY"
                 app:customDimension="0dp" />
+
         </Constraint>
-    </ConstraintSet>
-
-    <ConstraintSet android:id="@+id/collapsed">
 
         <Constraint
-            android:id="@id/view_background"
-            android:layout_height="?actionBarSize"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_small"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Constraint
-            android:id="@id/toolbar_image"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_header_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
 
             <CustomAttribute
                 app:attributeName="translationY"
-                app:customDimension="-130dp" />
-
+                app:customDimension="0dp" />
         </Constraint>
+
+        <Constraint
+            android:id="@id/tv_user_name_collapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:scaleX="0.6"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/toolbar_image" />
+
+
+        <Constraint
+            android:id="@id/tv_tweets_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:scaleX="1"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed">
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_twitter_handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_x_small"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_twitter_bio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_twitter_handle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_twitter_handle">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/iv_location"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/tv_twitter_bio"
+            app:layout_constraintStart_toStartOf="@+id/tv_twitter_bio"
+            app:layout_constraintTop_toBottomOf="@+id/tv_twitter_bio">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_location"
+            app:layout_constraintStart_toEndOf="@+id/iv_location"
+            app:layout_constraintTop_toTopOf="@+id/iv_location">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/iv_link"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+            app:layout_constraintStart_toEndOf="@+id/tv_location"
+            app:layout_constraintTop_toTopOf="@+id/tv_location">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_link"
+            app:layout_constraintStart_toEndOf="@+id/iv_link"
+            app:layout_constraintTop_toTopOf="@+id/iv_link">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/iv_date"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_link"
+            app:layout_constraintStart_toEndOf="@+id/tv_link"
+            app:layout_constraintTop_toTopOf="@+id/tv_link">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_date_joined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_date"
+            app:layout_constraintStart_toEndOf="@+id/iv_date"
+            app:layout_constraintTop_toTopOf="@+id/iv_date">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/iv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_following_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_following"
+            app:layout_constraintStart_toEndOf="@+id/tv_following"
+            app:layout_constraintTop_toTopOf="@+id/tv_following">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="-1dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_following_text"
+            app:layout_constraintStart_toEndOf="@+id/tv_following_text"
+            app:layout_constraintTop_toTopOf="@+id/tv_following_text">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_followers_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_followers"
+            app:layout_constraintStart_toEndOf="@+id/tv_followers"
+            app:layout_constraintTop_toTopOf="@+id/tv_followers">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
 
         <Constraint
             android:id="@id/recycler_view_tweets"
@@ -123,20 +392,318 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/iv_profile_image"
+            android:layout_width="@dimen/dimen_image_view"
+            android:layout_height="@dimen/dimen_image_view"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="95dp"
+            android:elevation="2dp"
+            android:scaleX="1"
+            android:src="@drawable/profile_pic"
+            android:visibility="invisible"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="3dp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="0dp" />
+
+        </Constraint>
+
+        <Constraint
             android:id="@id/btn_edit_profile"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="@dimen/dimen_standard"
             android:layout_marginEnd="@dimen/dimen_small"
-            app:layout_constraintEnd_toEndOf="parent"
             android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
 
             <CustomAttribute
                 app:attributeName="translationY"
-                app:customDimension="-190dp" />
+                app:customDimension="-195dp" />
 
         </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_user_name_collapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:scaleX="1"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_tweets_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:scaleX="1"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed">
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_twitter_bio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_x_small"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_twitter_handle"
+            app:layout_constraintTop_toBottomOf="@+id/tv_twitter_handle">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_twitter_handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/iv_location"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/tv_twitter_bio"
+            app:layout_constraintTop_toBottomOf="@+id/tv_twitter_bio">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_location"
+            app:layout_constraintStart_toEndOf="@+id/iv_location"
+            app:layout_constraintTop_toTopOf="@+id/iv_location">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/iv_link"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+            app:layout_constraintStart_toEndOf="@+id/tv_location"
+            app:layout_constraintTop_toTopOf="@+id/tv_location">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+        <Constraint
+            android:id="@id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/iv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_link"
+            app:layout_constraintStart_toEndOf="@+id/iv_link"
+            app:layout_constraintTop_toTopOf="@+id/iv_link">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/iv_date"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_link"
+            app:layout_constraintStart_toEndOf="@+id/tv_link"
+            app:layout_constraintTop_toTopOf="@+id/tv_link">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_date_joined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_date"
+            app:layout_constraintStart_toEndOf="@+id/iv_date"
+            app:layout_constraintTop_toTopOf="@+id/iv_date">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/iv_location"
+            app:layout_constraintTop_toBottomOf="@+id/tv_location">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_following_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_following"
+            app:layout_constraintStart_toEndOf="@+id/tv_following"
+            app:layout_constraintTop_toTopOf="@+id/tv_following">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="-1dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_following_text"
+            app:layout_constraintStart_toEndOf="@+id/tv_following_text"
+            app:layout_constraintTop_toTopOf="@+id/tv_following_text">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
+
+        <Constraint
+            android:id="@id/tv_followers_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_followers"
+            app:layout_constraintStart_toEndOf="@+id/tv_followers"
+            app:layout_constraintTop_toTopOf="@+id/tv_followers">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-195dp" />
+        </Constraint>
+
 
     </ConstraintSet>
 
