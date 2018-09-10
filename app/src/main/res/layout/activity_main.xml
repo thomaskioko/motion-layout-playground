@@ -13,7 +13,7 @@
         android:layout_width="?actionBarSize"
         android:layout_height="?actionBarSize"
         android:contentDescription="@null"
-        android:elevation="4dp"
+        android:elevation="8dp"
         android:padding="14dp"
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,15 +24,16 @@
         android:id="@+id/view_background"
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_profile_header_view"
-        android:background="@color/colorPrimaryDark"
-        android:elevation="1dp" />
+        android:background="@color/colorPrimaryDark" />
 
     <ImageView
         android:id="@+id/toolbar_image"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_header_background"
+        android:background="@color/colorPrimary"
         android:contentDescription="@null"
         android:elevation="2dp"
+        android:fitsSystemWindows="true"
         android:scaleType="centerCrop"
         android:src="@drawable/header_background"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_image" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/tv_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_standard"
@@ -67,6 +68,34 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_profile_image" />
+
+    <TextView
+        android:id="@+id/tv_user_name_collapsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:alpha="0"
+        android:elevation="4dp"
+        android:text="Thomas Kioko"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_image" />
+
+    <TextView
+        android:id="@+id/tv_tweets_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0"
+        android:elevation="4dp"
+        android:text="10.6K Tweets"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed" />
 
 
     <Button
@@ -85,64 +114,69 @@
 
 
     <TextView
-        android:id="@+id/sections"
+        android:id="@+id/tv_twitter_handle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_standard"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/dimen_x_small"
         android:elevation="4dp"
         android:text="@string/string_user_handle"
         android:textColor="@color/secondary_text"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
 
     <TextView
-        android:id="@+id/tv_bio"
-        android:layout_width="360dp"
+        android:id="@+id/tv_twitter_bio"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_small"
+        android:layout_marginEnd="@dimen/dimen_small"
         android:elevation="4dp"
         android:text="@string/text_bio"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/sections"
-        app:layout_constraintTop_toBottomOf="@+id/sections" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_twitter_handle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_twitter_handle" />
 
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/iv_location"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginTop="@dimen/dimen_small"
+        android:contentDescription="@null"
         android:elevation="2dp"
         android:src="@drawable/ic_location"
-        app:layout_constraintStart_toStartOf="@+id/tv_bio"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bio" />
+        app:layout_constraintStart_toEndOf="@+id/tv_twitter_bio"
+        app:layout_constraintStart_toStartOf="@+id/tv_twitter_bio"
+        app:layout_constraintTop_toBottomOf="@+id/tv_twitter_bio" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_location"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_small"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
         android:elevation="2dp"
         android:text="@string/text_country"
         android:textColor="@color/secondary_text"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/iv_location"
+        app:layout_constraintStart_toEndOf="@+id/iv_location"
+        app:layout_constraintTop_toTopOf="@+id/iv_location" />
 
     <ImageView
         android:id="@+id/iv_link"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="@dimen/dimen_small"
-        android:layout_marginTop="@dimen/dimen_small"
+        android:contentDescription="@null"
         android:elevation="2dp"
         android:src="@drawable/ic_link"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bio" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_location"
+        app:layout_constraintStart_toEndOf="@+id/tv_location"
+        app:layout_constraintTop_toTopOf="@+id/tv_location" />
 
     <TextView
         android:id="@+id/tv_link"
@@ -162,11 +196,12 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="@dimen/dimen_small"
-        android:layout_marginTop="@dimen/dimen_small"
+        android:contentDescription="@null"
         android:elevation="2dp"
         android:src="@drawable/ic_date"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_link"
         app:layout_constraintStart_toEndOf="@+id/tv_link"
-        app:layout_constraintTop_toBottomOf="@+id/tv_bio" />
+        app:layout_constraintTop_toTopOf="@+id/tv_link" />
 
     <TextView
         android:id="@+id/tv_date_joined"
@@ -191,8 +226,8 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/iv_location"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location" />
 
     <TextView
         android:id="@+id/tv_following_text"
@@ -246,4 +281,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_background"
         tools:listitem="@layout/item_tweet_view" />
+
 </androidx.constraintlayout.motion.widget.MotionLayout>
