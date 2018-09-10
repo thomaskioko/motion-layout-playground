@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="310dp"
+    android:background="@color/colorPrimaryDarker">
+
+    <com.thomaskioko.materialmotion.view.CircleImageView
+        android:id="@+id/iv_profile_image"
+        android:layout_width="@dimen/dimen_image_view_small"
+        android:layout_height="@dimen/dimen_image_view_small"
+        android:layout_marginStart="@dimen/dimen_standard"
+        android:layout_marginTop="8dp"
+        android:elevation="2dp"
+        android:src="@drawable/profile_pic"
+        app:civ_border_color="@color/colorPrimaryDark"
+        app:civ_border_width="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:alpha="1"
+        android:elevation="4dp"
+        android:text="@string/text_user_name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_twitter_handle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:elevation="4dp"
+        android:text="@string/string_user_handle"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/title"
+        app:layout_constraintStart_toEndOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/tv_twitter_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:elevation="4dp"
+        android:text="20h"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/title"
+        app:layout_constraintStart_toEndOf="@+id/tv_twitter_handle" />
+
+    <ImageView
+        android:id="@+id/iv_down_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="2dp"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_twitter_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_twitter_time" />
+
+    <TextView
+        android:id="@+id/tv_tweet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_small"
+        android:layout_marginEnd="@dimen/dimen_small"
+        android:elevation="4dp"
+        android:text="There's no better way to blow off some steam that you play some Metal Gear Solid"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_twitter_handle" />
+
+    <ImageView
+        android:id="@+id/iv_tweet_image"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="@dimen/dimen_small"
+        android:layout_marginEnd="8dp"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_tweet"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tweet"
+        app:srcCompat="@drawable/mgs" />
+
+    <ImageView
+        android:id="@+id/iv_twitter_comment"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/dimen_small"
+        android:elevation="2dp"
+        android:src="@drawable/ic_comment_bubble"
+        app:layout_constraintStart_toStartOf="@+id/iv_tweet_image"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tweet_image" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_small"
+        android:elevation="2dp"
+        android:text="4"
+        android:textColor="@color/secondary_text"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_twitter_comment"
+        app:layout_constraintStart_toEndOf="@+id/iv_twitter_comment"
+        app:layout_constraintTop_toTopOf="@+id/iv_twitter_comment" />
+
+    <ImageView
+        android:id="@+id/iv_link"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="@dimen/dimen_small"
+        android:elevation="2dp"
+        android:src="@drawable/ic_retweet"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tweet_image" />
+
+    <TextView
+        android:id="@+id/tv_retweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_small"
+        android:elevation="2dp"
+        android:text="124"
+        android:textColor="@color/green"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_link"
+        app:layout_constraintStart_toEndOf="@+id/iv_link"
+        app:layout_constraintTop_toTopOf="@+id/iv_link" />
+
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="@dimen/dimen_small"
+        android:elevation="2dp"
+        android:src="@drawable/ic_like"
+        app:layout_constraintStart_toEndOf="@+id/tv_retweet"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tweet_image" />
+
+    <TextView
+        android:id="@+id/tv_date_joined"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_small"
+        android:elevation="2dp"
+        android:text="43"
+        android:textColor="@color/red"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_like"
+        app:layout_constraintStart_toEndOf="@+id/iv_like"
+        app:layout_constraintTop_toTopOf="@+id/iv_like" />
+
+    <ImageView
+        android:id="@+id/iv_share"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="@dimen/dimen_small"
+        android:elevation="2dp"
+        android:src="@drawable/ic_share"
+        app:layout_constraintStart_toEndOf="@+id/tv_date_joined"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tweet_image" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
