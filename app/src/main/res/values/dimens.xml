@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_profile_header_view">400dp</dimen>
+    <dimen name="dimen_image_view">100dp</dimen>
+    <dimen name="dimen_header_background">135dp</dimen>
+    <dimen name="dimen_standard">16dp</dimen>
+    <dimen name="dimen_small">8dp</dimen>
+    <dimen name="dimen_x_small">4dp</dimen>
+    <dimen name="dimen_image_view_small">64dp</dimen>
+
+
+</resources>
