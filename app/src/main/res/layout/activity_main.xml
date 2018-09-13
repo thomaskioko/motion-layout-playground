@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDarker"
     app:layoutDescription="@xml/scene"
+    android:background="@color/colorPrimaryDark"
     app:showPaths="false">
 
     <ImageView
@@ -20,12 +20,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <View
-        android:id="@+id/view_background"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dimen_profile_header_view"
-        android:background="@color/colorPrimaryDark" />
-
     <ImageView
         android:id="@+id/toolbar_image"
         android:layout_width="match_parent"
@@ -37,7 +31,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/header_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.thomaskioko.materialmotion.view.CircleImageView
@@ -102,25 +95,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_bio_metadata"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
 
         <TextView
             android:id="@+id/tv_user_name"
-            android:layout_width="0dp"
+            android:layout_width="344dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:alpha="1"
             android:elevation="4dp"
             android:text="@string/text_user_name"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,13 +128,14 @@
             android:text="@string/string_user_handle"
             android:textColor="@color/secondary_text"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_user_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
 
         <TextView
             android:id="@+id/tv_twitter_bio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:elevation="4dp"
             android:text="@string/text_bio"
@@ -235,7 +230,7 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv_location"
             app:layout_constraintTop_toBottomOf="@+id/iv_location" />
 
         <TextView
@@ -279,6 +274,54 @@
             app:layout_constraintStart_toEndOf="@+id/tv_followers"
             app:layout_constraintTop_toTopOf="@+id/tv_followers" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@color/colorPrimaryDark"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_followers"
+            app:tabIndicatorColor="@color/link_text"
+            app:tabSelectedTextColor="@color/link_text"
+            app:tabTextAppearance="@style/Widget.TabItem">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                android:text="Tweets"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/secondary_text" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                android:text="Replies"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/secondary_text" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                android:text="Media"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/secondary_text" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp"
+                android:text="Likes"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/secondary_text" />
+
+
+        </com.google.android.material.tabs.TabLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -290,7 +333,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_background"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_bio_metadata"
         tools:listitem="@layout/item_tweet_view" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
