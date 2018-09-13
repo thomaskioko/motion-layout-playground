@@ -4,26 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/scene"
-    android:background="@color/colorPrimaryDark"
+    app:layoutDescription="@xml/scene_twitter_profile"
     app:showPaths="false">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="?actionBarSize"
-        android:layout_height="?actionBarSize"
-        android:contentDescription="@null"
-        android:elevation="8dp"
-        android:padding="14dp"
-        android:src="@drawable/ic_arrow_back"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_tweets"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/background_view"
+        tools:listitem="@layout/item_tweet_view" />
 
     <ImageView
         android:id="@+id/toolbar_image"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="@dimen/dimen_header_background"
+        android:adjustViewBounds="true"
         android:background="@color/colorPrimary"
         android:contentDescription="@null"
         android:elevation="2dp"
@@ -31,6 +29,35 @@
         android:scaleType="centerCrop"
         android:src="@drawable/header_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/background_view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_profile_header_view"
+        android:adjustViewBounds="true"
+        android:background="@color/colorPrimaryDark"
+        android:contentDescription="@null"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/header_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:src="@drawable/ic_arrow_back"
+        android:tint="?android:attr/textColorPrimaryInverse"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.thomaskioko.materialmotion.view.CircleImageView
@@ -47,36 +74,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_image" />
 
-
-    <TextView
-        android:id="@+id/tv_user_name_collapsed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:alpha="0"
-        android:elevation="4dp"
-        android:text="Thomas Kioko"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_image" />
-
-    <TextView
-        android:id="@+id/tv_tweets_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0"
-        android:elevation="4dp"
-        android:text="10.6K Tweets"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed" />
-
-
     <Button
         android:id="@+id/btn_edit_profile"
         android:layout_width="wrap_content"
@@ -91,16 +88,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_image" />
 
+    <TextView
+        android:id="@+id/tv_user_name_collapsed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:alpha="0"
+        android:elevation="4dp"
+        android:text="Thomas Kioko"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_image" />
+
+    <TextView
+        android:id="@+id/tv_tweets_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0"
+        android:elevation="4dp"
+        android:text="10.6K Tweets"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_user_name_collapsed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_bio_metadata"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
 
@@ -108,7 +129,7 @@
             android:id="@+id/tv_user_name"
             android:layout_width="344dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:alpha="1"
             android:elevation="4dp"
             android:text="@string/text_user_name"
@@ -135,7 +156,7 @@
             android:id="@+id/tv_twitter_bio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:elevation="4dp"
             android:text="@string/text_bio"
@@ -278,8 +299,9 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="54dp"
+            android:layout_marginTop="8dp"
             android:background="@color/colorPrimaryDark"
-            android:elevation="2dp"
+            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_followers"
@@ -324,16 +346,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_tweets"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraint_bio_metadata"
-        tools:listitem="@layout/item_tweet_view" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
