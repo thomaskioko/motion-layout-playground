@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Material Motion</string>
+    <string name="string_user_handle">\@code_wizard</string>
+    <string name="text_user_name">Thomas Kioko</string>
+    <string name="text_edit_profile">Edit Profile</string>
+    <string name="text_bio">Gamer | Pianist | Mentor | Android Engineer | Introverted Coder turned stand-up chameleon</string>
+    <string name="text_country">Kenya</string>
+    <string name="text_website">thomaskioko.com</string>
+    <string name="text_date">November 2011</string>
+    <string name="text_following_count">934</string>
+    <string name="text_following">Following</string>
+    <string name="text_followers_number">2,456</string>
+    <string name="text_followers">Followers</string>
 </resources>

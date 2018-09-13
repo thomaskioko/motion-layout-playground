@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/expanded">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/recycler_view_tweets"
+            app:touchAnchorSide="top" />
+
+
+        <KeyFrameSet>
+
+
+            <KeyAttribute
+                android:scaleX="0.5"
+                android:scaleY="0.5"
+                app:framePosition="20"
+                app:target="@id/iv_profile_image" />
+
+            <KeyPosition
+                app:framePosition="20"
+                app:keyPositionType="pathRelative"
+                app:percentX="0"
+                app:target="@id/iv_profile_image" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="90"
+                app:target="@id/tv_user_name_collapsed" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:target="@id/tv_user_name_collapsed" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="90"
+                app:target="@id/tv_tweets_count" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:target="@id/tv_tweets_count" />
+
+
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/expanded">
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_height="@dimen/dimen_header_background"
+            android:elevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                app:attributeName="imageAlpha"
+                app:customIntegerValue="255" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/background_view"
+            android:layout_height="@dimen/dimen_profile_header_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/iv_profile_image"
+            android:layout_width="@dimen/dimen_image_view"
+            android:layout_height="@dimen/dimen_image_view"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:elevation="2dp"
+            android:src="@drawable/profile_pic"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/btn_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/dimen_standard"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_user_name_collapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:elevation="4dp"
+            android:scaleX="1"
+            android:text="Thomas Kioko"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/toolbar_image" />
+
+
+        <Constraint
+            android:id="@id/tv_tweets_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:scaleX="1"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/tv_user_name_collapsed"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed">
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/constraint_bio_metadata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="0dp" />
+
+        </Constraint>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
+        <Constraint
+            android:id="@id/toolbar_image"
+            android:layout_height="60dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                app:attributeName="imageAlpha"
+                app:customIntegerValue="0" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/background_view"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Constraint
+            android:id="@id/iv_profile_image"
+            android:layout_width="@dimen/dimen_image_view"
+            android:layout_height="@dimen/dimen_image_view"
+            android:layout_marginStart="@dimen/dimen_standard"
+            android:layout_marginTop="@dimen/dimen_small"
+            android:elevation="2dp"
+            android:src="@drawable/profile_pic"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-246dp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/btn_edit_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/dimen_standard"
+            android:layout_marginEnd="@dimen/dimen_small"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-246dp" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_user_name_collapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:elevation="4dp"
+            android:scaleX="1"
+            android:text="Thomas Kioko"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/toolbar_image">
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/tv_tweets_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:scaleX="1"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed">
+
+            <CustomAttribute
+                app:attributeName="elevation"
+                app:customDimension="6dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/constraint_bio_metadata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
+
+            <CustomAttribute
+                app:attributeName="translationY"
+                app:customDimension="-246dp" />
+
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>
