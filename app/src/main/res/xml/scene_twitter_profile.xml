@@ -13,8 +13,6 @@
 
 
         <KeyFrameSet>
-
-
             <KeyAttribute
                 android:scaleX="0.5"
                 android:scaleY="0.5"
@@ -139,8 +137,8 @@
             android:id="@id/constraint_bio_metadata"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_profile_image">
@@ -150,6 +148,16 @@
                 app:customDimension="0dp" />
 
         </Constraint>
+
+        <Constraint
+            android:id="@id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="@dimen/dimen_profile_header_view"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/background_view" />
 
     </ConstraintSet>
 
@@ -182,7 +190,6 @@
             android:layout_marginStart="@dimen/dimen_standard"
             android:layout_marginTop="@dimen/dimen_small"
             android:elevation="2dp"
-            android:src="@drawable/profile_pic"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
             app:layout_constraintStart_toStartOf="parent"
@@ -218,7 +225,6 @@
             android:layout_marginTop="8dp"
             android:elevation="4dp"
             android:scaleX="1"
-            android:text="Thomas Kioko"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/toolbar_image">
 
@@ -247,8 +253,8 @@
             android:id="@id/constraint_bio_metadata"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -259,6 +265,16 @@
                 app:customDimension="-246dp" />
 
         </Constraint>
+
+        <Constraint
+            android:id="@id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="60dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/background_view" />
     </ConstraintSet>
 
 </MotionScene>
