@@ -11,4 +11,5 @@
     <string name="text_following">Following</string>
     <string name="text_followers_number">2,456</string>
     <string name="text_followers">Followers</string>
+    <string name="text_twitter">Twitter</string>
 </resources>
