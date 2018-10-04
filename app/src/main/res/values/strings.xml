@@ -12,4 +12,13 @@
     <string name="text_followers_number">2,456</string>
     <string name="text_followers">Followers</string>
     <string name="text_twitter">Twitter</string>
+    <string name="text_description">A once loyal father and chemistry teacher, Walter White, turns to a life of crime due to developing stage 3 terminal lung cancer. ... Breaking Bad follows protagonist Walter White, a chemistry teacher who lives in New Mexico with his wife and teenage son who has cerebral palsy.</string>
+    <string name="tv_movie_title">Breaking Bad(Tv Series 2008 - 2013)</string>
+    <string name="text_comment_number">748</string>
+    <string name="tv_ep_description">A once loyal father and chemistry teacher, Walter White, turns to a life of crime due to developing stage 3 terminal lung cancer</string>
+    <string name="text_ep_title">Season 5 Ep 16</string>
+    <string name="tv_ep_name">Felina</string>
+    <string name="tv_ep_duration">46:24</string>
+    <string name="tv_ep_title">S05 Ep16 Granite State</string>
+    <string name="tv_rating">4.3/5</string>
 </resources>
