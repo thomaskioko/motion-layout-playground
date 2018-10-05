@@ -1,9 +1,10 @@
-package com.thomaskioko.materialmotion
+package com.thomaskioko.materialmotion.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.thomaskioko.materialmotion.R
 
 class TweetsAdapter : RecyclerView.Adapter<TweetsAdapter.ViewHolder>() {
 

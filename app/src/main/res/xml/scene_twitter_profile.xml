@@ -19,11 +19,6 @@
                 app:framePosition="20"
                 app:target="@id/iv_profile_image" />
 
-            <KeyPosition
-                app:framePosition="20"
-                app:keyPositionType="pathRelative"
-                app:percentX="0"
-                app:target="@id/iv_profile_image" />
 
             <KeyAttribute
                 android:alpha="0"
@@ -50,6 +45,7 @@
 
     </Transition>
 
+    <!-- Original State/ Scroll down-->
     <ConstraintSet android:id="@+id/expanded">
         <Constraint
             android:id="@id/toolbar_image"
@@ -161,6 +157,7 @@
 
     </ConstraintSet>
 
+    <!-- Modified State/ Scroll Up-->
     <ConstraintSet android:id="@+id/collapsed">
         <Constraint
             android:id="@id/toolbar_image"

@@ -16,4 +16,6 @@
     <color name="green">#17BF63</color>
     <color name="red">#E0245D</color>
     <color name="link_text">#1EA1F2</color>
+    <color name="orange">#D35D44</color>
+    <color name="black">#000000</color>
 </resources>
