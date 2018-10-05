@@ -7,6 +7,7 @@
     <dimen name="dimen_small">8dp</dimen>
     <dimen name="dimen_x_small">4dp</dimen>
     <dimen name="dimen_image_view_small">64dp</dimen>
+    <dimen name="dimen_backdrop_image">280dp</dimen>
 
 
 </resources>
