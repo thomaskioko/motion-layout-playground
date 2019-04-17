@@ -42,7 +42,7 @@ class ListAdapter(private val data: Array<DemoData>) : RecyclerView.Adapter<List
             layout.setOnClickListener {
                 val context = it?.context as MainActivity
                 activity?.let {
-                    context.start(it, layoutFileId, exampleType, layoutPosition)
+                    context.start(it, layoutFileId, exampleType)
                 }
 
             }
