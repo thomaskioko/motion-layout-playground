@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.thomaskioko.materialmotion.DemoData
-import com.thomaskioko.materialmotion.ExampleTypes
+import com.thomaskioko.materialmotion.model.ExampleTypes
 import com.thomaskioko.materialmotion.MainActivity
 import com.thomaskioko.materialmotion.R
 
@@ -28,11 +28,12 @@ class ListAdapter(private val data: Array<DemoData>) : RecyclerView.Adapter<List
         holder.activity = data[position].activity
         holder.exampleType = data[position].type
         holder.title.text = data[position].title
+        holder.description.text = data[position].description
     }
 
     class ViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout) {
-        var title = layout.findViewById(R.id.titleTextView) as TextView
-        var rootLayout = layout.findViewById(R.id.rootLayout) as ConstraintLayout
+        var title = layout.findViewById(R.id.tv_title) as TextView
+        var description = layout.findViewById(R.id.tv_description) as TextView
         var layoutFileId = 0
         var activity: Class<*>? = null
         var exampleType: ExampleTypes? = null
