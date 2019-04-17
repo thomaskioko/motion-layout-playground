@@ -7,5 +7,5 @@ data class DemoData(
     val description: String,
     val type: ExampleTypes,
     val layout: Int = 0,
-    val activity: Class<*> = DemoActivity::class.java
+    val activity: Class<*> = MotionLayoutActivity::class.java
 )
