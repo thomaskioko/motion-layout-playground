@@ -3,9 +3,9 @@ package com.thomaskioko.materialmotion
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.thomaskioko.materialmotion.adapter.ListAdapter
+import com.thomaskioko.materialmotion.model.DemoData
 import com.thomaskioko.materialmotion.model.ExampleTypes
 import kotlinx.android.synthetic.main.activity_main.*
 
