@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.thomaskioko.materialmotion.DemoData
+import com.thomaskioko.materialmotion.model.DemoData
 import com.thomaskioko.materialmotion.model.ExampleTypes
 import com.thomaskioko.materialmotion.MainActivity
 import com.thomaskioko.materialmotion.R
