@@ -1,6 +1,6 @@
-package com.thomaskioko.materialmotion
+package com.thomaskioko.materialmotion.model
 
-import com.thomaskioko.materialmotion.model.ExampleTypes
+import com.thomaskioko.materialmotion.MotionLayoutActivity
 
 data class DemoData(
     val title: String,
