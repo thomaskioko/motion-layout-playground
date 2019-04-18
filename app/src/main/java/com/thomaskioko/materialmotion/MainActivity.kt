@@ -11,6 +11,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val mAdapterData: Array<DemoData> = arrayOf(
+            DemoData("Tweets", "A demo of Twitter timeline", ExampleTypes.TWITTER_LIST, R.layout.activity_twitter_list),
+            DemoData("Breaking Bad", "Breaking bad episode list", ExampleTypes.MOVIE_EPISODES, R.layout.activity_movie_detail),
+            DemoData("Screen Intro", "Demo of the famous splash screen", ExampleTypes.SPLASH_SCREEN, R.layout.activity_splash_screen)
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
