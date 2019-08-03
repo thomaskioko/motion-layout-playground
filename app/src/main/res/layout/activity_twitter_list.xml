@@ -80,7 +80,6 @@
         android:id="@+id/tv_tweets_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
         android:elevation="2dp"
         android:text="10.6K Tweets"
         android:textColor="@color/white"
