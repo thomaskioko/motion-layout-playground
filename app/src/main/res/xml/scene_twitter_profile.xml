@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:motion="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        motion:constraintSetEnd="@id/collapsed"
-        motion:constraintSetStart="@id/expanded">
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/expanded">
 
         <OnSwipe
-            motion:dragDirection="dragUp"
-            motion:touchAnchorId="@id/recycler_view_list"
-            motion:touchAnchorSide="top"/>
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/recycler_view_list"
+            app:touchAnchorSide="top"/>
 
 
         <KeyFrameSet>
             <KeyAttribute
                 android:scaleX="0.5"
                 android:scaleY="0.5"
-                motion:framePosition="20"/>
+                app:framePosition="20"/>
 
 
             <KeyAttribute
                 android:alpha="0"
-                motion:framePosition="90"/>
+                app:framePosition="90"/>
 
             <KeyAttribute
                 android:alpha="1"
-                motion:framePosition="100"/>
+                app:framePosition="100"/>
 
             <KeyAttribute
                 android:alpha="0"
-                motion:framePosition="90"/>
+                app:framePosition="90"/>
 
             <KeyAttribute
                 android:alpha="1"
-                motion:framePosition="100"/>
+                app:framePosition="100"/>
 
 
         </KeyFrameSet>
@@ -45,21 +45,21 @@
         <Constraint android:id="@+id/toolbar_image">
             <Layout
                 android:layout_height="@dimen/dimen_header_background"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-            <PropertySet motion:alpha="255"/>
+            <PropertySet app:alpha="255"/>
 
-            <Transform motion:elevation="2dp"/>
+            <Transform app:elevation="2dp"/>
         </Constraint>
 
         <Constraint android:id="@+id/background_view">
             <Layout
                 android:layout_height="@dimen/dimen_profile_header_view"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
         </Constraint>
 
         <Constraint android:id="@+id/iv_profile_image">
@@ -69,13 +69,13 @@
                 android:layout_marginStart="@dimen/dimen_standard"
                 android:layout_marginTop="@dimen/dimen_small"
                 android:src="@drawable/profile_pic"
-                motion:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
 
             <Transform
                 android:translationY="0dp"
-                motion:elevation="2dp"/>
+                app:elevation="2dp"/>
 
         </Constraint>
 
@@ -85,10 +85,10 @@
                 android:layout_height="30dp"
                 android:layout_marginEnd="@dimen/dimen_small"
                 android:layout_marginTop="@dimen/dimen_standard"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
 
-            <PropertySet motion:visibility="visible"/>
+            <PropertySet android:visibility="visible"/>
 
             <Transform android:translationY="0dp"/>
 
@@ -101,12 +101,12 @@
                 android:layout_marginStart="16dp"
                 android:scaleX="1"
                 android:text="Thomas Kioko"
-                motion:layout_constraintStart_toEndOf="@+id/imageView"
-                motion:layout_constraintTop_toTopOf="@+id/toolbar_image"/>
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/toolbar_image"/>
 
-            <Transform motion:elevation="4dp"/>
+            <Transform android:elevation="4dp"/>
 
-            <PropertySet motion:visibility="invisible"/>
+            <PropertySet android:visibility="invisible"/>
         </Constraint>
 
 
@@ -116,14 +116,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="2dp"
-                motion:layout_constraintStart_toStartOf="@+id/tv_user_name_collapsed"
-                motion:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed"/>
+                app:layout_constraintStart_toStartOf="@+id/tv_user_name_collapsed"
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed"/>
 
             <Transform
                 android:scaleX="1"
-                motion:elevation="6dp"/>
+                android:elevation="6dp"/>
 
-            <PropertySet motion:visibility="invisible"/>
+            <PropertySet android:visibility="invisible"/>
         </Constraint>
 
         <Constraint android:id="@+id/tab_layout">
@@ -133,9 +133,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@+id/iv_profile_image"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_profile_image"/>
 
             <Transform android:translationY="0dp"/>
 
@@ -146,11 +146,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginTop="@dimen/dimen_profile_header_view"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="@+id/background_view"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/background_view"/>
 
-            <Transform motion:elevation="0dp"/>
+            <Transform android:elevation="0dp"/>
         </Constraint>
 
     </ConstraintSet>
@@ -161,40 +161,40 @@
         <Constraint android:id="@+id/toolbar_image">
             <Layout
                 android:layout_height="80dp"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_marginTop="35dp"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="35dp"/>
 
-            <PropertySet motion:alpha="0"/>
+            <PropertySet android:alpha="0"/>
 
-            <Transform motion:elevation="4dp"/>
+            <Transform android:elevation="4dp"/>
 
         </Constraint>
 
         <Constraint android:id="@+id/imageView">
             <Layout
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_marginTop="35dp"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="35dp"/>
 
         </Constraint>
 
         <Constraint android:id="@+id/iv_more">
             <Layout
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_marginTop="35dp"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="35dp"/>
 
         </Constraint>
 
         <Constraint android:id="@+id/background_view">
             <Layout
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_height="80dp"
-                motion:layout_marginTop="35dp"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="35dp"/>
         </Constraint>
 
 
@@ -206,9 +206,9 @@
                 android:layout_marginTop="@dimen/dimen_small"
                 android:elevation="2dp"
                 android:visibility="invisible"
-                motion:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
 
             <Transform android:translationY="-246dp"/>
 
@@ -221,8 +221,8 @@
                 android:layout_marginEnd="@dimen/dimen_small"
                 android:layout_marginTop="@dimen/dimen_standard"
                 android:visibility="invisible"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_image"/>
 
             <Transform android:translationY="-246dp"/>
 
@@ -230,35 +230,35 @@
 
         <Constraint android:id="@+id/tv_user_name_collapsed">
             <Layout
-                motion:layout_constraintStart_toEndOf="@+id/imageView"
-                motion:layout_constraintTop_toTopOf="@+id/toolbar_image"
-                motion:layout_height="wrap_content"
-                motion:layout_marginStart="16dp"
-                motion:layout_marginTop="8dp"
-                motion:layout_width="wrap_content"/>
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/toolbar_image"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"/>
 
-            <PropertySet motion:visibility="visible"/>
+            <PropertySet android:visibility="visible"/>
 
             <Transform
                 android:scaleX="1"
-                motion:elevation="8dp"/>
+                android:elevation="8dp"/>
 
         </Constraint>
 
         <Constraint android:id="@+id/tv_tweets_count">
             <Layout
-                motion:layout_constraintStart_toEndOf="@+id/imageView"
-                motion:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed"
-                motion:layout_height="wrap_content"
-                motion:layout_marginStart="16dp"
-                motion:layout_marginTop="2dp"
-                motion:layout_width="wrap_content"/>
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_name_collapsed"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"/>
 
-            <PropertySet motion:visibility="visible"/>
+            <PropertySet android:visibility="visible"/>
 
             <Transform
                 android:scaleX="1"
-                motion:elevation="6dp"/>
+                android:elevation="6dp"/>
 
         </Constraint>
 
@@ -269,9 +269,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:visibility="invisible"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toBottomOf="@+id/iv_profile_image"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_profile_image"/>
 
             <Transform android:translationY="-246dp"/>
 
@@ -284,9 +284,9 @@
                 android:layout_height="54dp"
                 android:layout_marginTop="60dp"
                 android:elevation="4dp"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="@+id/background_view"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/background_view"/>
         </Constraint>
     </ConstraintSet>
 
