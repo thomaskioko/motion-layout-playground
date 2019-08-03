@@ -51,7 +51,7 @@
 
     <ImageView
         android:id="@+id/iv_location"
-        android:layout_width="20dp"
+        android:layout_width="16dp"
         android:layout_height="20dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@null"
@@ -75,8 +75,8 @@
 
     <ImageView
         android:id="@+id/iv_link"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:layout_marginStart="@dimen/dimen_small"
         android:contentDescription="@null"
         android:elevation="2dp"
@@ -100,8 +100,8 @@
 
     <ImageView
         android:id="@+id/iv_date"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@null"
         android:elevation="2dp"
