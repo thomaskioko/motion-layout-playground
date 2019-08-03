@@ -5,8 +5,8 @@
     android:id="@+id/motion_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true"
-    android:background="@color/colorPrimaryDarker"
     app:layoutDescription="@xml/scene_twitter_profile">
 
 
@@ -28,9 +28,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/dimen_header_background"
         android:adjustViewBounds="true"
-        android:background="@color/colorPrimary"
         android:contentDescription="@null"
-        android:elevation="2dp"
         android:fitsSystemWindows="false"
         android:scaleType="centerCrop"
         android:src="@drawable/header_background"
@@ -43,10 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:contentDescription="@null"
-        android:elevation="3dp"
-        android:padding="14dp"
         android:background="@drawable/drawable_circular_background"
+        android:contentDescription="@null"
+        android:elevation="2dp"
+        android:padding="14dp"
         android:src="@drawable/ic_arrow_back"
         android:tint="?android:attr/textColorPrimaryInverse"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
@@ -58,7 +56,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/drawable_circular_background"
         android:contentDescription="@null"
-        android:elevation="4dp"
+        android:elevation="2dp"
         android:padding="14dp"
         android:src="@drawable/ic_more_vert_white_24dp"
         android:tint="?android:attr/textColorPrimaryInverse"
@@ -70,13 +68,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:alpha="100"
-        android:elevation="4dp"
+        android:elevation="2dp"
         android:text="Thomas Kioko"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_back_button"
         app:layout_constraintStart_toEndOf="@+id/iv_back_button"
         app:layout_constraintTop_toTopOf="@+id/iv_back_button" />
 
@@ -85,8 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:alpha="100"
-        android:elevation="4dp"
+        android:elevation="2dp"
         android:text="10.6K Tweets"
         android:textColor="@color/white"
         android:textSize="14sp"
@@ -102,10 +97,9 @@
         android:contentDescription="@null"
         android:fitsSystemWindows="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/header_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_image" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
@@ -150,7 +144,7 @@
         android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_image"
+        app:layout_constraintTop_toBottomOf="@+id/layout_profile_metadata"
         app:tabIndicatorColor="@color/link_text"
         app:tabSelectedTextColor="@color/link_text"
         app:tabTextAppearance="@style/Widget.TabItem">
@@ -158,7 +152,6 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
             android:text="Tweets"
             app:tabSelectedTextColor="@color/white"
             app:tabTextColor="@color/secondary_text" />
@@ -166,7 +159,6 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
             android:text="Replies"
             app:tabSelectedTextColor="@color/white"
             app:tabTextColor="@color/secondary_text" />
@@ -174,7 +166,6 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
             android:text="Media"
             app:tabSelectedTextColor="@color/white"
             app:tabTextColor="@color/secondary_text" />
@@ -182,7 +173,6 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="2dp"
             android:text="Likes"
             app:tabSelectedTextColor="@color/white"
             app:tabTextColor="@color/secondary_text" />
@@ -194,7 +184,6 @@
         android:id="@+id/iv_profile_image"
         android:layout_width="@dimen/dimen_image_view"
         android:layout_height="@dimen/dimen_image_view"
-        android:elevation="2dp"
         android:src="@drawable/profile_pic"
         app:civ_border_color="@color/colorPrimaryDark"
         app:civ_border_width="3dp"
@@ -203,6 +192,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_image" />
 
     <include
+        android:id="@+id/layout_profile_metadata"
         layout="@layout/layout_profile_metadata"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
