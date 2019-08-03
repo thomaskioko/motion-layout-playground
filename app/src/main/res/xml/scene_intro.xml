@@ -4,8 +4,7 @@
 
     <Transition
         motion:constraintSetEnd="@id/end"
-        motion:constraintSetStart="@id/start"
-        motion:duration="1500">
+        motion:constraintSetStart="@id/start">
 
         <KeyFrameSet>
             <KeyPosition
@@ -26,8 +25,8 @@
 
         <Constraint android:id="@+id/iv_logo">
             <Layout
-                motion:layout_width="48dp"
-                motion:layout_height="48dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 motion:layout_constraintBottom_toBottomOf="parent"
                 motion:layout_constraintStart_toStartOf="parent"
                 motion:layout_constraintTop_toTopOf="parent" />
@@ -49,8 +48,8 @@
                 motion:layout_constraintEnd_toEndOf="parent"
                 motion:layout_constraintStart_toStartOf="parent"
                 motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_height="wrap_content"
-                motion:layout_width="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
         </Constraint>
 
         <Constraint android:id="@+id/tv_text">
@@ -58,8 +57,8 @@
                 motion:layout_constraintEnd_toEndOf="parent"
                 motion:layout_constraintStart_toStartOf="parent"
                 motion:layout_constraintTop_toBottomOf="@+id/iv_logo"
-                motion:layout_height="wrap_content"
-                motion:layout_width="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
         </Constraint>
 
     </ConstraintSet>

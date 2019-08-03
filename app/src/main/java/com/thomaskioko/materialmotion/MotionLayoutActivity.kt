@@ -16,9 +16,6 @@ class MotionLayoutActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-
         val layout = intent.getIntExtra("layoutId", 0)
         val exampleType = intent.getIntExtra("type", 0)
         setContentView(layout)
@@ -43,6 +40,8 @@ class MotionLayoutActivity : AppCompatActivity(){
     }
 
     private fun populateMovieData(){
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         recycler_view_list.apply {
             adapter = EpisodeAdapter()
             layoutManager = LinearLayoutManager(this@MotionLayoutActivity)

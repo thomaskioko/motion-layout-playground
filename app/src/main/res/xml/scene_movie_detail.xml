@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        motion:constraintSetEnd="@id/end"
-        motion:constraintSetStart="@id/start">
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start">
 
         <OnSwipe
-            motion:dragDirection="dragUp"
-            motion:touchAnchorId="@id/recycler_view_list"
-            motion:touchAnchorSide="top" />
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/recycler_view_list"
+            app:touchAnchorSide="top" />
 
     </Transition>
 
@@ -17,22 +18,22 @@
 
         <Constraint android:id="@+id/iv_backdrop">
             <Layout
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_height="@dimen/dimen_backdrop_image" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="@dimen/dimen_backdrop_image" />
         </Constraint>
 
 
         <Constraint android:id="@+id/fab_stream">
             <Layout
-                motion:layout_constraintBottom_toBottomOf="@+id/iv_backdrop"
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintTop_toBottomOf="@+id/iv_backdrop"
-                motion:layout_height="wrap_content"
-                motion:layout_marginEnd="8dp"
-                motion:layout_marginTop="8dp"
-                motion:layout_width="wrap_content" />
+                app:layout_constraintBottom_toBottomOf="@+id/iv_backdrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_backdrop"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content" />
         </Constraint>
 
 
@@ -42,14 +43,14 @@
 
         <Constraint android:id="@+id/iv_backdrop">
             <Layout
-                motion:layout_constraintEnd_toEndOf="parent"
-                motion:layout_constraintStart_toStartOf="parent"
-                motion:layout_constraintTop_toTopOf="parent"
-                motion:layout_height="30dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="35dp" />
         </Constraint>
 
         <Constraint android:id="@+id/fab_stream">
-            <PropertySet motion:visibility="gone" />
+            <PropertySet android:visibility="gone" />
         </Constraint>
 
 
