@@ -12,6 +12,16 @@
                 android:elevation="2dp"
                 app:framePosition="10"
                 app:motionTarget="@id/toolbar_image" />
+
+            <!-- We only want to transition to opaque over the last 40% -->
+            <KeyAttribute
+                app:framePosition="60"
+                app:motionTarget="@id/toolbar_image">
+                <CustomAttribute
+                    app:attributeName="backgroundColor"
+                    app:customColorValue="@color/orange" />
+            </KeyAttribute>
+
         </KeyFrameSet>
 
         <OnSwipe
@@ -29,6 +39,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="imageAlpha"
+                app:customIntegerValue="255" />
         </Constraint>
 
         <Constraint android:id="@+id/iv_profile_image">
@@ -56,11 +69,13 @@
 
         <Constraint android:id="@+id/toolbar_image">
             <Layout
-                android:layout_height="80dp"
+                android:layout_height="75dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-            <PropertySet android:alpha="0" />
+            <CustomAttribute
+                app:attributeName="imageAlpha"
+                app:customIntegerValue="0" />
             <CustomAttribute
                 app:attributeName="background"
                 app:customColorDrawableValue="@color/orange" />
