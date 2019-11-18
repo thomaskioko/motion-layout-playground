@@ -1,11 +1,11 @@
 Motion Layout Playground
 -----------------------------
-This project contains various examples that demonstrate how to user Motionlayout to create amazing animations
+This project contains various examples that demonstrate how to user MotionLayout to create amazing animations
 
 
 ## Development setup
 
-First off, you require the latest Android Studio 3.0 (or newer) to be able to build the app.
+First off, you require the latest Android Studio 4.0 to be able to build the app. (The main reason for choosing this version is to be able to try out the Motion Editor)
 
 ## Splash Screen Demo
 
