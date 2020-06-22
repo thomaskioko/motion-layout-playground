@@ -9,6 +9,7 @@ import com.thomaskioko.materialmotion.adapter.TweetsAdapter
 import com.thomaskioko.materialmotion.model.ExampleTypes
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 import kotlinx.android.synthetic.main.activity_movie_detail.motion_layout
+import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 
 class MotionLayoutActivity : AppCompatActivity(){
@@ -50,6 +51,6 @@ class MotionLayoutActivity : AppCompatActivity(){
 
     private fun introAnimation(){
         //Start the animation
-        motion_layout.transitionToEnd()
+        splash_motion_layout.transitionToEnd()
     }
 }
